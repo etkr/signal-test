@@ -1,0 +1,12 @@
+@if (loading()) {
+  <mat-spinner />
+} @else {
+  <mat-list>
+  @for (fact of catFacts(); track fact) {
+    <mat-list-item>{{ fact.fact }}</mat-list-item>
+  }
+  </mat-list>
+}
+
+<p>Length: {{ catFacts().length }}</p>
+<button mat-flat-button (click)="load()">Load</button>
